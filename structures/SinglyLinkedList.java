@@ -15,7 +15,19 @@ public class SinglyLinkedList {
   }
 
   public void addToRear(int value) {
-
+    if (this.root == null) {
+      this.root = new Node(value);
+      return;
+    }
+    Node curr = this.root;
+    while (curr != null) {
+      if (curr.next == null) {
+        Node n = new Node(value);
+        curr.next = n;
+        return;
+      }
+      curr = curr.next;
+    }
   }
 
   public void deleteFromFront() {

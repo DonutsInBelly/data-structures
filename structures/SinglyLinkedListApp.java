@@ -8,6 +8,7 @@ public class SinglyLinkedListApp {
     Scanner input = new Scanner(System.in);
     SinglyLinkedList sll = new SinglyLinkedList();
     char choice1;
+    int input1;
     do {
       System.out.println("Singly Linked List Options: ");
       System.out.println("q: Add to front\nw: Add to rear\ne: delete from front\nr: delete from rear\nt: search and delete\ny: search and add\np: print entire list\nz: exit");
@@ -15,10 +16,14 @@ public class SinglyLinkedListApp {
       switch (choice1) {
         case 'q':
           System.out.println("Enter a number to Add to Front: ");
-          int value = input.nextInt();
-          sll.addToFront(value);
+          input1 = input.nextInt();
+          sll.addToFront(input1);
           break;
         case 'w':
+          System.out.println("Enter a number to Add to Rear: ");
+          input1 = input.nextInt();
+          sll.addToRear(input1);
+          break;
         case 'e':
         case 'r':
         case 't':
