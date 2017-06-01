@@ -33,6 +33,10 @@ public class SinglyLinkedListApp {
           sll.deleteFromRear();
           break;
         case 't':
+          System.out.println("Enter a number to Search and Delete: ");
+          input1 = input.nextInt();
+          sll.searchAndDelete(input1);
+          break;
         case 'y':
         case 'p':
           sll.printList();

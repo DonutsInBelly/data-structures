@@ -65,7 +65,30 @@ public class SinglyLinkedList {
   }
 
   public void searchAndDelete(int value) {
-
+    if (this.root == null) {
+      System.out.println("Unable to delete: Empty List.");
+      return;
+    }
+    Node curr = this.root;
+    Node prev = null;
+    do {
+      if (curr.value == value && prev == null) {
+        if (curr.next != null) {
+          this.root = curr.next;
+          curr = curr.next;
+          continue;
+        } else {
+          this.root = null;
+          return;
+        }
+      } else if (curr.value == value) {
+        prev.next = curr.next;
+        curr = curr.next;
+        continue;
+      }
+      prev = curr;
+      curr = curr.next;
+    } while (curr != null);
   }
 
   public void searchAndAdd(int value) {
