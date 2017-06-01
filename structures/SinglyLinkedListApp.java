@@ -25,6 +25,9 @@ public class SinglyLinkedListApp {
           sll.addToRear(input1);
           break;
         case 'e':
+          System.out.println("Deleting from Front.");
+          sll.deleteFromFront();
+          break;
         case 'r':
           System.out.println("Deleting from Rear.");
           sll.deleteFromRear();

@@ -31,7 +31,16 @@ public class SinglyLinkedList {
   }
 
   public void deleteFromFront() {
-
+    if (this.root == null) {
+      System.out.println("Unable to delete: Empty List.");
+      return;
+    }
+    if (this.root.next == null) {
+      this.root = null;
+      return;
+    }
+    this.root = this.root.next;
+    return;
   }
 
   public void deleteFromRear() {
