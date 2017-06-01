@@ -26,6 +26,9 @@ public class SinglyLinkedListApp {
           break;
         case 'e':
         case 'r':
+          System.out.println("Deleting from Rear.");
+          sll.deleteFromRear();
+          break;
         case 't':
         case 'y':
         case 'p':

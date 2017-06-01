@@ -35,7 +35,24 @@ public class SinglyLinkedList {
   }
 
   public void deleteFromRear() {
-
+    if (this.root == null) {
+      System.out.println("Unable to delete: Empty List.");
+      return;
+    }
+    Node curr = this.root;
+    Node prev = null;
+    do {
+      if (curr.next == null && prev == null) {
+        this.root = null;
+        return;
+      }
+      if (curr.next == null) {
+        prev.next = null;
+        return;
+      }
+      prev = curr;
+      curr = curr.next;
+    } while (curr != null);
   }
 
   public void searchAndDelete(int value) {
@@ -47,6 +64,10 @@ public class SinglyLinkedList {
   }
 
   public void printList() {
+    if (this.root == null) {
+      System.out.println("Unable to print: Empty List.");
+      return;
+    }
     Node curr = this.root;
     do {
       System.out.print(curr);
