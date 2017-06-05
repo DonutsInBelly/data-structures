@@ -119,6 +119,23 @@ public class SinglyLinkedList {
     } while (curr != null);
   }
 
+  // Starts fromt the Head of a Linked List and iterates until it finds the node and inserts a nade after it
+  public void searchAndAddAfter(int target, int value) {
+    if (this.root == null) {
+      this.root = new Node(value);
+      return;
+    }
+
+    Node curr = this.root;
+    do {
+      if (curr.value == target) {
+        Node n = new Node(value, curr.next);
+        curr.next = n;
+      }
+      curr = curr.next;
+    } while (curr != null);
+  }
+
   public void printList() {
     if (this.root == null) {
       System.out.println("Unable to print: Empty List.");

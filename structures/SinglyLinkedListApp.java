@@ -46,6 +46,12 @@ public class SinglyLinkedListApp {
           sll.searchAndAddBefore(input1, input2);
           break;
         case 'u':
+          System.out.println("Enter a number to Search for: ");
+          input1 = input.nextInt();
+          System.out.println("Enter a number to Add After it: ");
+          input2 = input.nextInt();
+          sll.searchAndAddAfter(input1, input2);
+          break;
         case 'p':
           sll.printList();
           break;
