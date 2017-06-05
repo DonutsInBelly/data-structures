@@ -5,6 +5,7 @@ public class SinglyLinkedList {
 
   public Node root;
 
+  // Adds a node to the Head of a Linked List
   public void addToFront(int value) {
     if (this.root == null) {
       this.root = new Node(value);
@@ -14,6 +15,7 @@ public class SinglyLinkedList {
     this.root = n;
   }
 
+  // Adds a node to the Tail of a Linked List
   public void addToRear(int value) {
     if (this.root == null) {
       this.root = new Node(value);
@@ -30,6 +32,7 @@ public class SinglyLinkedList {
     }
   }
 
+  // Deletes a node at the Head of a Linked List
   public void deleteFromFront() {
     if (this.root == null) {
       System.out.println("Unable to delete: Empty List.");
@@ -43,6 +46,7 @@ public class SinglyLinkedList {
     return;
   }
 
+  // Deletes a node at the Tail of a Linked List
   public void deleteFromRear() {
     if (this.root == null) {
       System.out.println("Unable to delete: Empty List.");
@@ -64,6 +68,7 @@ public class SinglyLinkedList {
     } while (curr != null);
   }
 
+  // Starts from the Head of a Linked List and iterates until it finds the node to delete
   public void searchAndDelete(int value) {
     if (this.root == null) {
       System.out.println("Unable to delete: Empty List.");
@@ -91,8 +96,27 @@ public class SinglyLinkedList {
     } while (curr != null);
   }
 
-  public void searchAndAdd(int value) {
+  // Starts from the Head of a Linked List and iterates until it finds the node and inserts a node before it
+  public void searchAndAddBefore(int target, int value) {
+    if (this.root == null) {
+      this.root = new Node(value);
+      return;
+    }
 
+    Node curr = this.root;
+    Node prev = null;
+    do {
+      if (curr.value == target && prev == null) {
+        Node n = new Node(value, this.root);
+        this.root = n;
+        return;
+      } else if (curr.value == target) {
+        prev.next = new Node(value, curr);
+        return;
+      }
+      prev = curr;
+      curr = curr.next;
+    } while (curr != null);
   }
 
   public void printList() {

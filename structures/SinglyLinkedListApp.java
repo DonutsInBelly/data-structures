@@ -9,9 +9,10 @@ public class SinglyLinkedListApp {
     SinglyLinkedList sll = new SinglyLinkedList();
     char choice1;
     int input1;
+    int input2;
     do {
       System.out.println("Singly Linked List Options: ");
-      System.out.println("q: Add to front\nw: Add to rear\ne: delete from front\nr: delete from rear\nt: search and delete\ny: search and add\np: print entire list\nz: exit");
+      System.out.println("q: Add to front\nw: Add to rear\ne: delete from front\nr: delete from rear\nt: search and delete\ny: search and add before\nu: search and add after\np: print entire list\nz: exit");
       choice1 = scan.next().trim().charAt(0);
       switch (choice1) {
         case 'q':
@@ -38,6 +39,13 @@ public class SinglyLinkedListApp {
           sll.searchAndDelete(input1);
           break;
         case 'y':
+          System.out.println("Enter a number to Search for: ");
+          input1 = input.nextInt();
+          System.out.println("Enter a number to Add Before it: ");
+          input2 = input.nextInt();
+          sll.searchAndAddBefore(input1, input2);
+          break;
+        case 'u':
         case 'p':
           sll.printList();
           break;
