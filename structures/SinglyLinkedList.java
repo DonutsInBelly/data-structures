@@ -136,6 +136,7 @@ public class SinglyLinkedList {
     } while (curr != null);
   }
 
+  // Prints the contents of the Linked List in order, starting from the Head
   public void printList() {
     if (this.root == null) {
       System.out.println("Unable to print: Empty List.");
@@ -146,6 +147,25 @@ public class SinglyLinkedList {
       System.out.print(curr);
       curr = curr.next;
     } while (curr != null);
+    System.out.println();
+  }
+
+  // Prints the contents of the Linked List, but in reverse
+  public void printReverse() {
+    if (this.root == null) {
+      System.out.println("Unable to print: Empty List.");
+      return;
+    }
+    Stack<Node> s = new Stack<Node>();
+    Node curr = this.root;
+    do {
+      s.push(curr);
+      curr = curr.next;
+    } while (curr != null);
+    do {
+      // Returns the Node and then use Node's toString method
+      System.out.print(s.pop());
+    } while (!s.empty());
     System.out.println();
   }
 }

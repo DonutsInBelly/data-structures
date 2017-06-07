@@ -12,7 +12,7 @@ public class SinglyLinkedListApp {
     int input2;
     do {
       System.out.println("Singly Linked List Options: ");
-      System.out.println("q: Add to front\nw: Add to rear\ne: delete from front\nr: delete from rear\nt: search and delete\ny: search and add before\nu: search and add after\np: print entire list\nz: exit");
+      System.out.println("q: Add to front\nw: Add to rear\ne: delete from front\nr: delete from rear\nt: search and delete\ny: search and add before\nu: search and add after\np: print entire list\nb: print entire list in reverse\nz: exit");
       choice1 = scan.next().trim().charAt(0);
       switch (choice1) {
         case 'q':
@@ -54,6 +54,9 @@ public class SinglyLinkedListApp {
           break;
         case 'p':
           sll.printList();
+          break;
+        case 'b':
+          sll.printReverse();
           break;
       }
     } while (choice1 != 'z');
