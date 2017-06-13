@@ -3,11 +3,6 @@ import java.util.*;
 
 public class BinaryTreeApp {
 
-  public enum {
-    LEFT(0);
-    RIGHT(1);
-  }
-
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     Scanner input = new Scanner(System.in);
@@ -20,6 +15,9 @@ public class BinaryTreeApp {
       choice1 = scan.next().trim().charAt(0);
       switch (choice1) {
         case 'q':
+          System.out.println("Enter a number to Insert in the tree: ");
+          input1 = input.nextInt();
+          bst.insert(input1);
           break;
         case 'w':
           break;
