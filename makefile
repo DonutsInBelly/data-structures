@@ -5,3 +5,9 @@ SinglyLinkedList:
 
 BinaryTree:
 		$(CC) structures/BinaryTreeApp.java
+
+Graph:
+		$(CC) structures/GraphApp.java
+
+all:
+		$(CC) -Xlint:unchecked *.java structures/*.java

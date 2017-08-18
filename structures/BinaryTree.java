@@ -1,3 +1,6 @@
+package structures;
+import java.util.*;
+
 public class BinaryTree {
 
   public enum Child {
@@ -32,5 +35,22 @@ public class BinaryTree {
       }
     } while (curr != null);
     System.out.println("Something went wrong here!");
+  }
+
+  public void inorder() {
+    if (this.root == null) {
+      System.out.println("Tree is empty!");
+      return;
+    }
+    Stack<TreeNode> s = new Stack<TreeNode>();
+    TreeNode curr = this.root;
+    do {
+      s.push(curr);
+      if (curr == null) {
+
+      } else {
+        curr = curr.children.get(Child.LEFT);
+      }
+    } while (!s.empty());
   }
 }
