@@ -1,56 +1,74 @@
 package structures;
 import java.util.*;
+import java.util.ArrayList;
+
 
 public class BinaryTree {
 
-  public enum Child {
-    LEFT(0);
-    RIGHT(1);
-  }
+    public TreeNode root;
+    public int left;
+    public int right;
 
-  public TreeNode root;
+    // public BinaryTree() {
+    //     this.left = 0;
+    //     this.right = 1;
+    // }
 
-  public void insert(int value) {
-    if (this.root == null) {
-      this.root = new TreeNode(value);
-      return;
+    public void insert(int value) {
+        if (this.root == null) {
+            this.root = new TreeNode(value);
+            return;
+        }
+        TreeNode curr = this.root;
+        do {
+            if (value == curr.value) {
+                System.out.println("Value is a duplicate and already exists in the tree.");
+                return;
+            } else if (value < curr.value) {
+                if (curr.left == null) {
+                    curr.left = new TreeNode(value);
+                    return;
+                }
+                curr = curr.left;
+            } else if (value > curr.value) {
+                if (curr.right == null) {
+                    curr.right = new TreeNode(value);
+                    return;
+                }
+                curr = curr.right;
+            }
+        } while (curr != null);
+        System.out.println("Something went wrong here!");
     }
-    TreeNode curr = this.root;
-    do {
-      if (value == curr.value) {
-        System.out.println("Value is a duplicate and already exists in the tree.");
+
+    public void inorder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.value + ", ");
+        inorder(root.right);
         return;
-      } else if (value < curr.value) {
-        if (curr.children.get(Child.LEFT) == null) {
-          curr.children.add(Child.LEFT, new TreeNode(value));
-          return;
-        }
-        curr = curr.children.get(Child.LEFT);
-      } else if (value > curr.value) {
-        if (curr.children.get(Child.RIGHT) == null) {
-          curr.children.add(Child.RIGHT, new TreeNode(value));
-          return;
-        }
-        curr = curr.children.get(Child.RIGHT);
-      }
-    } while (curr != null);
-    System.out.println("Something went wrong here!");
-  }
-
-  public void inorder() {
-    if (this.root == null) {
-      System.out.println("Tree is empty!");
-      return;
     }
-    Stack<TreeNode> s = new Stack<TreeNode>();
-    TreeNode curr = this.root;
-    do {
-      s.push(curr);
-      if (curr == null) {
 
-      } else {
-        curr = curr.children.get(Child.LEFT);
-      }
-    } while (!s.empty());
-  }
+    public void preorder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.value + ", ");
+        preorder(root.left);
+        preorder(root.right);
+        return;
+    }
+
+    public void postorder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.value + ", ");
+        return;
+    }
+
 }

@@ -63,6 +63,7 @@ public class Graph {
     public int BreadthFirstSearch(int target) {
         // Start at 0,0
         // Queue<GNode>
+        return 0;
     }
 
     public void printBoard() {

@@ -3,6 +3,9 @@ CC=javac
 SinglyLinkedList:
 		$(CC) structures/SinglyLinkedListApp.java
 
+BTAuto:
+		$(CC) structures/BTAutoApp.java
+
 BinaryTree:
 		$(CC) structures/BinaryTreeApp.java
 
